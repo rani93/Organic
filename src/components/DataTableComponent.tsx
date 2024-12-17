@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { DataTable, DataTablePageEvent } from "primereact/datatable";
 import { Column } from "primereact/column";
-import { Checkbox } from "primereact/checkbox";
+// import { Checkbox } from "primereact/checkbox";
 import { fetchArtworks } from "../services/apiService";
 // import { DataTableSelectionChangeEvent } from "primereact/datatable";
 
@@ -24,7 +24,7 @@ const DataTableComponent: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [totalRecords, setTotalRecords] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
-  const [rowsPerPage, setRowsPerPage] = useState<number>(0);
+  // const [rowsPerPage, setRowsPerPage] = useState<number>(0);
 
   // State to track row selections persistently
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
@@ -39,7 +39,7 @@ const DataTableComponent: React.FC = () => {
     const data = await fetchArtworks(pageNumber);
     setArtworks(data.data);
     setTotalRecords(data.pagination.total);
-    setRowsPerPage(data.pagination.limit);
+    // setRowsPerPage(data.pagination.limit);
     setLoading(false);
   };
 
@@ -61,19 +61,19 @@ const DataTableComponent: React.FC = () => {
   };
 
   // Row checkbox renderer (checks state for persistence)
-  const rowCheckboxTemplate = (rowData: Artwork) => (
-    <Checkbox
-      checked={!!selectedRows[rowData.id]}
-      onChange={() => toggleRowSelection(rowData)}
-    />
-  );
+  // const rowCheckboxTemplate = (rowData: Artwork) => (
+  //   <Checkbox
+  //     checked={!!selectedRows[rowData.id]}
+  //     onChange={() => toggleRowSelection(rowData)}
+  //   />
+  // );
 
-  const toggleRowSelection = (rowData: Artwork) => {
-    setSelectedRows((prev) => ({
-      ...prev,
-      [rowData.id]: !prev[rowData.id],
-    }));
-  };
+  // const toggleRowSelection = (rowData: Artwork) => {
+  //   setSelectedRows((prev) => ({
+  //     ...prev,
+  //     [rowData.id]: !prev[rowData.id],
+  //   }));
+  // };
 
   return (
     <div className="card">

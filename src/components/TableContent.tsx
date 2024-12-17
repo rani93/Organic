@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { DataTable, DataTablePageEvent } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { fetchArtworks } from '../services/apiService';
-import { Checkbox } from 'primereact/checkbox';
+// import { Checkbox } from 'primereact/checkbox';
 import { OverlayPanel } from 'primereact/overlaypanel';
 import 'primeicons/primeicons.css';
 import { Button } from 'primereact/button';
@@ -56,7 +56,7 @@ export default function PaginatorBasicDemo() {
   };
 
   // Custom header template with Overlay functionality
-  const headerTemplate = (event: any) => (
+  const headerTemplate = (/*event: any*/) => (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       {/* <Checkbox
         onChange={(e) => toggleSelectAll(e.checked)}
@@ -77,13 +77,13 @@ export default function PaginatorBasicDemo() {
     </div>
   );
 
-  const toggleSelectAll = (checked: boolean | undefined) => {
-    if (checked) {
-      setSelectedRows([...artWork]);
-    } else {
-      setSelectedRows([]);
-    }
-  };
+  // const toggleSelectAll = (checked: boolean | undefined) => {
+  //   if (checked) {
+  //     setSelectedRows([...artWork]);
+  //   } else {
+  //     setSelectedRows([]);
+  //   }
+  // };
 
   return (
     <div className="card">
